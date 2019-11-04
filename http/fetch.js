@@ -5,7 +5,7 @@
 const fetch = require('node-fetch')
 const url = 'https://jsonplaceholder.typicode.com/posts'
 
-async function fetchAsync() {
+const fetchAsync = async () => {
     try {
         const response = await fetch(url)
         const data = await response.json();
