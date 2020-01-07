@@ -1,19 +1,15 @@
-/**
- * Fetch Example using node-fetch
- */
+const url = 'https://dog.ceo/api/breeds/image/random'
 
-const fetch = require('node-fetch')
-const url = 'https://jsonplaceholder.typicode.com/posts'
+let dogImg = document.querySelector('[data-js="dog-img"')
 
-const fetchAsync = async () => {
-    try {
-        const response = await fetch(url)
-        const data = await response.json();
-        return data
-    } catch (error) {
-        throw new Error(error)
-    }
-}
-
-fetchAsync()
-        .then(res => console.log(res))
+fetch(url)
+    .then(dogData => {
+        if (!dogData.ok) {
+            throw new Error(`HTTP Error, status ${dogData.status}`)
+        }
+        return dogData.json()
+    })
+    .then(({message}) => {
+        dogImg.setAttribute('src', message)
+    })
+    .catch(error => console.log(error.message))
