@@ -1,6 +1,6 @@
 const url = 'https://dog.ceo/api/breeds/image/random'
 
-let dogImg = document.querySelector('[data-js="dog-img"')
+let dogImg = document.querySelector('[data-js="dog-img"]')
 
 fetch(url)
     .then(dogData => {
