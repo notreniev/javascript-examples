@@ -12,7 +12,9 @@ function isPalindrome(str){
     if (typeof str !== 'string'){
         return false;
     }else{
-        let strReverse = [...str].reverse().join('');
+        str = str.replace(' ','');
+        let strReverse = [...str].reverse().join('').replace(' ','');
+        console.log(strReverse.toLocaleLowerCase(), str.toLocaleLowerCase())
         return strReverse.toLocaleLowerCase() === str.toLocaleLowerCase();
     }
 }
@@ -20,3 +22,5 @@ function isPalindrome(str){
 console.log(isPalindrome('SocorrammeSubinoonibusemMarrocos'));
 console.log(isPalindrome('luz azul'));
 console.log(isPalindrome('ana'));
+console.log(isPalindrome('reviver'));
+console.log(isPalindrome('palíndromo'));
