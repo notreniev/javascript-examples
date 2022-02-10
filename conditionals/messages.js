@@ -5,9 +5,10 @@
 
 const getMessage = (err) => {
     return ({
-        'NotFoundError': {statusCode: 404,message: "None record found!"},
-        'RouteMissingError': {statusCode: 400, message: "Route doesn't exists"}
-    }[err] || {statusCode: 400, message: "Couldn't process your request"});
+        'NotFoundError': {
+            statusCode: 404, message: "None record found!"
+        'RouteMissingError': { statusCode: 400, message: "Route doesn't exists" }
+        }[err] || { statusCode: 400, message: "Couldn't process your request" });
 }
 
 const test3 = getMessage('NotFoundError')
